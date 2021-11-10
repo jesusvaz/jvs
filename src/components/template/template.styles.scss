@@ -1,0 +1,103 @@
+
+  $main-rdious:5px;
+  $main-padding:5px;
+  $main-and-content: white;
+  $nav-bar: #bbab9b;
+  $foot-color:rgb(241, 241, 243);
+
+  .container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr  1fr ;
+    grid-template-rows: 1fr 1.5fr 1.2fr .8fr;
+    grid-template-areas: 
+    "nav1 nav2 nav3 nav4"
+    "main main main main"
+    "content1 content2 content3 content4"
+    "footer footer footer footer";
+    grid-gap: 0.2rem;
+  
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size:  12px;
+    color: #004d40; // color de letra
+    text-align: center;
+  }
+  // nav{
+  //   background-image: url('https://images.pexels.com/photos/2651377/pexels-photo-2651377.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  //   grid-area: nav;
+  //   border-radius: $main-rdious;
+  //   padding-top: $main-padding;
+  // }
+  nav1{
+   // background-image: url('https://images.pexels.com/photos/2651377/pexels-photo-2651377.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    grid-area:nav1;
+  }
+  nav2{
+    grid-column: 2/4;
+    grid-area:nav2;
+  }
+  nav3{
+    grid-area:nav3;
+  }
+  nav4{
+    grid-area:nav4;
+  }
+  
+  main{
+    background-color: $main-and-content;
+    grid-area: main;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+  
+  .content1{
+    background-color: $main-and-content;
+    grid-area: content1;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+  .content2{
+    background-color: $main-and-content;
+    grid-area: content2;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+  .content3{
+    background-color: $main-and-content;
+    grid-area: content3;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+  .content4{
+    background-color: $main-and-content;
+    grid-area: content4;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+
+  footer{
+    background-color:$foot-color;
+    grid-area: footer;
+    border-radius: $main-rdious;
+    padding-top: $main-padding;
+  }
+  @media only screen and (max-width:550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: .4fr .4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "nav1"
+        "nav2"
+        "nav3"
+        "nav4"
+        "main"
+        "content1" 
+        "content2 "
+        "content3"
+        "content4"
+        "footer";
+        }
+  } 
+  
+  

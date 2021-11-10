@@ -1,0 +1,35 @@
+import React,{useState} from 'react';
+import SingleHistoria from './single-history/single-history.component';
+import HISTORIAS from '../assets/conociendoAlTata';
+
+
+const Hisorias = () => {
+
+    const [historias,setHistorias] = useState(HISTORIAS.secciones);
+
+    console.log('que tiene historias:',HISTORIAS.secciones);
+    
+const showHistorias = historias.map( h => (<SingleHistoria  
+    title={h.title} 
+    subtitle={h.subtitle} 
+    titleDelMensaje={h.titleDelMensaje} 
+    historia={h.historia}/>))
+
+    // const showHistorias = (h) => <SingleHistoria  
+    // title={h.title} 
+    // subtitle={h.subtitle} 
+    // titleDelMensaje={h.titleDelMensaje} 
+    // historia={h.historia}/>
+
+    // console.log('showHistorias:',showHistorias);
+
+    return (
+        <>
+        Solo una historia
+        {showHistorias}
+         
+        </>
+    )
+}
+
+export default Hisorias

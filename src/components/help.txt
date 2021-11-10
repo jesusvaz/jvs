@@ -1,0 +1,114 @@
+ <div>
+                    
+                <div className="container">
+
+                <div key='c1n' className="nav1"><Padres/></div>
+                <div key='c2n' className="nav2"><Timpanogos/></div>
+                <div key='c3n' className="nav3"><Fall/></div>
+                <div key='c4n' className="nav4"><TempleMX/></div>
+
+                <Router>
+                        <Switch>
+                            <Route exact path='/impresiones' component={Impresiones}></Route>
+                            <Route exact path='/conferencia' component={Conferencia}></Route>
+                            <Route exact path='/educacion' component={Education}></Route>
+                            <Route exact path='/historias' component={Historias}></Route>
+                        </Switch>
+                
+
+
+                        <main>
+                        <br/>
+                        MAIN
+                        </main>
+
+                        <div key='c1' className="content1">  <Link to='/educacion'><Education/></Link>   </div>
+                        <div key='c2' className="content2">  <Link to='/conferencia'><Conferencia/></Link> </div>
+                        <div key='c3' className="content3">  <Link to='historias'><Historias/></Link>   </div>
+                        <div key='c4' className="content4">  <Link to='/impresiones'><Impresiones/></Link> </div>
+                        <footer>Tibuto a Jesus Vazuez Sauceda</footer>
+                </Router>
+                
+                </div>
+
+            </div>
+
+/////////////////////////////////////////////////////
+
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+function LandingPage() {
+    return (
+        <div>
+            <h1>Landing Page</h1>
+            <div>
+                    
+                    <div className="container">
+    
+                    <div key='c1n' className="nav1"><Padres/></div>
+                    <div key='c2n' className="nav2"><Timpanogos/></div>
+                    <div key='c3n' className="nav3"><Fall/></div>
+                    <div key='c4n' className="nav4"><TempleMX/></div>
+    
+                            <main>
+                            <br/>
+                            MAIN
+                            </main>
+    
+                            <div key='c1' className="content1">  <Link to='/educacion'><Education/></Link>   </div>
+                            <div key='c2' className="content2">  <Link to='/conferencia'><Conferencia/></Link> </div>
+                            <div key='c3' className="content3">  <Link to='historias'><Historias/></Link>   </div>
+                            <div key='c4' className="content4">  <Link to='/impresiones'><Impresiones/></Link> </div>
+                            <footer>Tibuto a Jesus Vazuez Sauceda</footer>
+                    
+                    
+                    </div>
+    
+                </div>
+        </div>
+    )
+}
+
+export default LandingPage
+
+///////////////////////////////////
+
+
+import React from 'react';
+import './talk.styles.scss';
+
+// es un array
+
+function Talk({ talk, speaker, calling, url, parrafos }) {
+
+    const contenido = parrafos.map(parrafo => 
+        (
+            <div className="impresion">
+               <h6>Subrayado</h6>
+               {/* <p>{parrafo.id}</p> */}
+               <p><mark>{parrafo.parrafoEsp}</mark></p> 
+               <h6>Impresion</h6>
+               <p>{parrafo.impresionEsp}</p>
+       
+            </div>
+        )
+
+    )
+
+    return (
+        <div>
+            <h1>{talk}</h1>
+            <h3>{speaker}</h3>
+            <h4>{calling}</h4>
+            <a href={url} target="blank">Discurso</a>
+            {contenido}
+          
+        </div>
+    )
+}
+
+export default Talk
+
+
+**********************************
